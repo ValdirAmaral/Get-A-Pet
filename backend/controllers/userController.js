@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const createUserToken = require("../helpers/create-user-token");
 const getToken = require("../helpers/get-token");
 const jwt = require("jsonwebtoken");
-const getUserByToken = require('../helpers/get-user-by-token')
+const getUserByToken = require("../helpers/get-user-by-token");
 
 module.exports = class UserController {
   static async register(req, res) {
@@ -133,8 +133,8 @@ module.exports = class UserController {
     const id = req.params.id;
 
     //check if user exists
-    const token = getToken(req)
-    const user = await getUserByToken(token)
+    const token = getToken(req);
+    const user = await getUserByToken(token);
 
     const { name, email, phone, password, confirmpassword } = req.body;
 
@@ -146,7 +146,7 @@ module.exports = class UserController {
       return;
     }
 
-    user.name = name
+    user.name = name;
 
     if (!email) {
       res.status(422).json({ message: "O email é obrigatório" });
