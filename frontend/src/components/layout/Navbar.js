@@ -7,7 +7,6 @@ import Logo from "../../assets/img/logo.png";
 /*context*/
 import { Context } from "../../context/UserContext";
 
-
 function Navbar() {
   const { authenticated, logout } = useContext(Context);
 
@@ -23,6 +22,9 @@ function Navbar() {
         </li>
         {authenticated ? (
           <>
+            <li>
+              <Link to="/user/profile">Perfil</Link>
+            </li>
             <li onClick={logout}>Sair</li>
           </>
         ) : (
