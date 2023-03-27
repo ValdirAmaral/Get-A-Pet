@@ -19,7 +19,7 @@ function Input({
         placeholder={placeholder}
         onChange={handleOnChange}
         value={value}
-        {...(multiple ? (multiple) : '' )}
+        {...(multiple ? { multiple } : '' )}
       />
     </div>
   );
