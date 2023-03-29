@@ -10,11 +10,17 @@ function PetForm({ handleSubmit, petData, btnText }) {
   const [preview, setPreview] = useState([]);
   const colors = ["Branco", "Preto", "Cinza", "Caramelo", "Mesclado"];
 
-  function onFileChange(e) {}
+  function onFileChange(e) {
+    setPet ({...pet, images: [...e.target.files]})
+  }
 
-  function handleChange(e) {}
+  function handleChange(e) {
+    setPet ({...pet, color: e.target.options[e.targe.selectedIndex].text})
+  }
 
-  function handleColor(e) {}
+  function handleColor(e) {
+    setPet ({...pet, [e.target.name]: e.target.value})
+  }
 
   return (
     <form className={formStyles.form_container}>
